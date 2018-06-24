@@ -1,20 +1,15 @@
 package hello;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-@Entity
 public class Match {
-
+    
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String firstTeam;
     private String secondTeam;
-    private Long firstTeamScore;
-    private Long secondTeamScore;
+    private Short firstTeamScore;
+    private Short secondTeamScore;
 
     protected Match() {}
 
@@ -23,11 +18,13 @@ public class Match {
         this.secondTeam = secondTeam;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Match[id=%d, firstTeam='%s', secondTeam='%s']",
-                id, firstTeam, secondTeam);
+
+    public void setFirstName(String firstTeam) {
+        this.firstTeam = firstTeam;
+    }
+
+    public String getFirstTeam() {
+        return firstTeam;
     }
 
 }
