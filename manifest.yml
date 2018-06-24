@@ -1,0 +1,8 @@
+---
+applications:
+- name: lauri-world-cup
+  memory: 256M
+  instances: 1
+  host: github
+  domain: github
+  path: build/libs/lauri-world-cup-0.1.0.jar
