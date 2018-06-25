@@ -8,12 +8,12 @@ public class Match {
     private String id;
     private String firstTeam;
     private String secondTeam;
-    private String firstTeamScore;
-    private String secondTeamScore;
+    private Short firstTeamScore;
+    private Short secondTeamScore;
 
     protected Match() {}
 
-    public Match(String firstTeam, String secondTeam, String firstTeamScore, String secondTeamScore) {
+    public Match(String firstTeam, String secondTeam, Short firstTeamScore, Short secondTeamScore) {
         this.firstTeam = firstTeam;
         this.secondTeam = secondTeam;
         this.firstTeamScore = firstTeamScore;
@@ -41,20 +41,20 @@ public class Match {
 
     // Scores
 
-    public void setFirstTeamScore(String firstTeamScore) {
+    public void setFirstTeamScore(Short firstTeamScore) {
         this.firstTeamScore = firstTeamScore;
     }
 
     public String getFirstTeamScore() {
-        return firstTeamScore;
+        return firstTeamScore.toString();
     }
 
-    public void setSecondTeamScore(String secondTeamScore) {
+    public void setSecondTeamScore(Short secondTeamScore) {
         this.secondTeamScore = secondTeamScore;
     }
 
     public String getSecondTeamScore() {
-        return secondTeamScore;
+        return secondTeamScore.toString();
     }
 
 
