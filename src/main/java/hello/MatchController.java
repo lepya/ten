@@ -21,7 +21,7 @@ public class MatchController {
     private MatchRepository matchRepo;
 
 
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(method=RequestMethod.GET, value={"/list"})
       public List<Match> getAll() {
 
         return matchRepo.findAll();
