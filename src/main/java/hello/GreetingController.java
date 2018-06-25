@@ -24,4 +24,10 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+
+    @RequestMapping(method=RequestMethod.POST, value={"/postresults"})
+    public Greeting postresults(@RequestParam(value="name", defaultValue="Brazil") String name) {
+            System.out.print("test");
+        return new Greeting(0,"");
+    }
 }
