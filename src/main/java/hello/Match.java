@@ -8,18 +8,26 @@ public class Match {
     private String id;
     private String firstTeam;
     private String secondTeam;
-    private Short firstTeamScore;
-    private Short secondTeamScore;
+    private Integer firstTeamScore;
+    private Integer secondTeamScore;
 
     protected Match() {}
 
-    public Match(String firstTeam, String secondTeam, Short firstTeamScore, Short secondTeamScore) {
+    public Match(String id, String firstTeam, String secondTeam, Integer firstTeamScore, Integer secondTeamScore) {
+        this.id = id;
         this.firstTeam = firstTeam;
         this.secondTeam = secondTeam;
         this.firstTeamScore = firstTeamScore;
         this.secondTeamScore = secondTeamScore;
     }
+    
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     // Teams
 
@@ -41,20 +49,20 @@ public class Match {
 
     // Scores
 
-    public void setFirstTeamScore(Short firstTeamScore) {
+    public void setFirstTeamScore(Integer firstTeamScore) {
         this.firstTeamScore = firstTeamScore;
     }
 
-    public String getFirstTeamScore() {
-        return firstTeamScore.toString();
+    public Integer getFirstTeamScore() {
+        return firstTeamScore;
     }
 
-    public void setSecondTeamScore(Short secondTeamScore) {
+    public void setSecondTeamScore(Integer secondTeamScore) {
         this.secondTeamScore = secondTeamScore;
     }
 
-    public String getSecondTeamScore() {
-        return secondTeamScore.toString();
+    public Integer getSecondTeamScore() {
+        return secondTeamScore;
     }
 
 
