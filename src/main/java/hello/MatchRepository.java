@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "match", path = "match")
-public interface MatchRepository extends MongoRepository<Match, Long> {
+public interface MatchRepository extends MongoRepository<Match, String> {
 
 	List<Match> findByFirstTeam(@Param("firstTeam") String firstTeam);
 	// List<Match> findByLastName(@Param("name") String name);

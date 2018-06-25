@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 public class Match {
     
     @Id
-    private Long id;
+    private String id;
     private String firstTeam;
     private String secondTeam;
-    private Short firstTeamScore;
-    private Short secondTeamScore;
+    private String firstTeamScore;
+    private String secondTeamScore;
 
     protected Match() {}
 
-    public Match(String firstTeam, String secondTeam, Short firstTeamScore, Short secondTeamScore) {
+    public Match(String firstTeam, String secondTeam, String firstTeamScore, String secondTeamScore) {
         this.firstTeam = firstTeam;
         this.secondTeam = secondTeam;
         this.firstTeamScore = firstTeamScore;
@@ -41,19 +41,19 @@ public class Match {
 
     // Scores
 
-    public void setFirstTeamScore(Short firstTeamScore) {
+    public void setFirstTeamScore(String firstTeamScore) {
         this.firstTeamScore = firstTeamScore;
     }
 
-    public Short getFirstTeamScore() {
+    public String getFirstTeamScore() {
         return firstTeamScore;
     }
 
-    public void setSecondTeamScore(Short secondTeamScore) {
+    public void setSecondTeamScore(String secondTeamScore) {
         this.secondTeamScore = secondTeamScore;
     }
 
-    public Short getSecondTeamScore() {
+    public String getSecondTeamScore() {
         return secondTeamScore;
     }
 
