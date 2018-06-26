@@ -27,16 +27,17 @@ public class MatchController {
         return matchRepo.findAll();
       }
       
-      @RequestMapping(method=RequestMethod.POST)
+      @RequestMapping(method=RequestMethod.POST, value={"/p"})
       public Match create(@RequestBody Match match) {
 
         return matchRepo.save(match);
       }
 
-      @RequestMapping(method=RequestMethod.DELETE, value="{id}")
+      @RequestMapping(method=RequestMethod.DELETE, value="{del/{id}}")
       public void delete(@PathVariable String id) {
 
         Optional<Match> m = matchRepo.findById(id);
+
         if (m.isPresent()){
             matchRepo.delete(m.get());
         }
@@ -44,7 +45,8 @@ public class MatchController {
         }
 
       }
-      @RequestMapping(method=RequestMethod.PUT, value="{id}")
+      
+      @RequestMapping(method=RequestMethod.PUT, value="{put/{id}}")
           public Match update(@PathVariable String id, @RequestBody Match match) {
 
             Optional<Match> m = matchRepo.findById(id);
@@ -66,7 +68,5 @@ public class MatchController {
             }
 
             return null;
-
       }
-
 }
