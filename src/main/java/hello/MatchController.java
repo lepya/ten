@@ -33,7 +33,7 @@ public class MatchController {
         return matchRepo.save(match);
       }
 
-      @RequestMapping(method=RequestMethod.DELETE, value="{del/{id}}")
+      @RequestMapping(method=RequestMethod.DELETE, value="/del/{id}")
       public void delete(@PathVariable String id) {
 
         Optional<Match> m = matchRepo.findById(id);
@@ -46,7 +46,7 @@ public class MatchController {
 
       }
       
-      @RequestMapping(method=RequestMethod.PUT, value="{put/{id}}")
+      @RequestMapping(method=RequestMethod.PUT, value="/put/{id}")
           public Match update(@PathVariable String id, @RequestBody Match match) {
 
             Optional<Match> m = matchRepo.findById(id);
